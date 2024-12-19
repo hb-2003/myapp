@@ -6,3 +6,11 @@ block content
   form(action="/" method="POST")
     input(type="email" name="email")
     button(type="submit") Submit 
+
+  if leads
+    ul
+      each lead in leads
+        li
+          | #{lead.email} 
+          a(href="/delete/"+lead.id) Delete
+  

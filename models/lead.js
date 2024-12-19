@@ -1,19 +1,19 @@
 'use strict';
 
-const { Sequelize } = require("sequelize");
-
-module.exports =(sequelize,DataType) => {
-  var Lead = Sequelize.define('Lead',{
-    id :{
-        type:DataType.UUID,
-        defaultValue:DataType.UUIDV4,
-        allowNull:false,
-        primaykey:true,
+module.exports = (sequelize, DataTypes) => {
+  var Lead = sequelize.define('Lead', {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true,  
     },
-    email:{
-        type:DataType.STRING,
-        allowNull:false,
-    },  
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
-  return Lead;  
+
+  return Lead;
 };
+
