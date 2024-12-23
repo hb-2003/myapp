@@ -12,5 +12,6 @@ block content
       each lead in leads
         li
           | #{lead.email} 
-          a(href="/delete/"+lead.id) Delete
+          a(href="/leads/"+lead.id) Delete
+          a(href="/leads/edit/"+lead.id) Edit
   

@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
   });
 
   return Lead;

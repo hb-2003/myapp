@@ -31,7 +31,24 @@ exports.delete = async function(req, res, next) {
 
   if (lead) {
     await lead.destroy();
-  }
-
+  };
   res.redirect('/');
-}
+};
+
+exports.edit = async function(req, res, next) {
+  console.log(req.params.id);
+  const id = req.params.id;
+  const lead = await models.Lead.findByPk(id);
+  res.render('edit', {  lead: lead });
+};
+
+exports.update = async function(req, res, next) {
+  console.log(req.params.id);
+  const id = req.params.id;
+  const lead = await models.Lead.findByPk(id);
+  if (lead) {
+    lead.email = req.body.email;
+    await lead.save();
+  };
+  res.redirect('/');
+};
